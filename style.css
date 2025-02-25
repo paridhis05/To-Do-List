@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(236, 236, 236);
+    text-align: center;
+    font-family:Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.container{
+    width: 300px;
+    background-color: white;
+    padding: 15px;
+    /* height: 300px; */
+    /* margin: 50px; */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(90, 90, 90);
+}
+
+.container h1{
+    /* padding: 10px; */
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.container input{
+    border: 1px solid rgb(172, 172, 172);
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.container input::placeholder{
+    padding: 3px;
+    font-size: 15px;
+}
+
+.container .add-btn{
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(39, 39, 232);
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+    width: 60%;
+}
+
+.container .add-btn:hover{
+    background-color: rgb(88, 88, 230); 
+}
+
+.container .List{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.listing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.listing.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff5c5c;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  .delete-btn:hover {
+    color: #e60000;
+  }
+
