@@ -1,3 +1,29 @@
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const modeIcon = document.getElementById("mode-icon");
+
+    // Toggle the icon between sun and moon
+    if (document.body.classList.contains("dark-mode")) {
+        modeIcon.classList.replace("fa-moon", "fa-sun"); // Change to sun
+        localStorage.setItem("darkMode", "enabled"); // Save preference
+    } else {
+        modeIcon.classList.replace("fa-sun", "fa-moon"); // Change to moon
+        localStorage.setItem("darkMode", "disabled"); // Save preference
+    }
+}
+
+// Apply saved dark mode preference on page load
+window.onload = function() {
+    const modeIcon = document.getElementById("mode-icon");
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        modeIcon.classList.replace("fa-moon", "fa-sun"); // Show sun icon
+    } else {
+        modeIcon.classList.replace("fa-sun", "fa-moon"); // Show moon icon
+    }
+};
+
 function addTask() {
     const input = document.getElementById('input-id');
     const task = input.value.trim();
