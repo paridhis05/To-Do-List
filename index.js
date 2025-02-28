@@ -55,7 +55,15 @@ function addTask() {
 
 // Deletes the task from the task.
 function deleteTask(button) {
-    button.parentElement.parentElement.remove();
+    const li = button.parentElement.parentElement;
+
+    // Add fade-out animation
+    li.classList.add("removing");
+
+    // Remove task after animation completes
+    setTimeout(() => {
+        li.remove();
+    }, 300);
 }
 
 // Add/removes the '.completed' class.
