@@ -41,30 +41,34 @@ function toggleComplete(taskElement) {
 function editTask(button) {
     const li = button.parentElement.parentElement; // Finds the <li> that contains the task.
     const span = li.querySelector("span"); // Selects the <span> inside it (task text).
-    const oldTask = span.innerText; // Stores the current task text.
+    const oldTask = span.innerText; // Stores the current task text
 
     // Creates an <input> field.
-    const input = document.createElement("input"); 
+    const input = document.createElement("input");
     input.type = "text";
     input.value = oldTask;
-    input.className = "edit-input"; // Adds a class 
+    input.className = "edit-input"; // Adds a class for styling
     input.style.marginRight = "10px";
 
     // Creates a Save button.
-    const saveBtn = document.createElement("button"); 
-    saveBtn.innerHTML = `<i class="fa-solid fa-check"></i>`; 
+    const saveBtn = document.createElement("button");
+    saveBtn.innerHTML = `<i class="fa-solid fa-check"></i>`;
     saveBtn.className = "edit-btn";
 
-    // Restores the Edit button.
-    saveBtn.onclick = function() {
-        span.innerText = input.value;
-        li.replaceChild(span, input);
-        li.querySelector(".edit-btn").replaceWith(button);
+    // Restores edit button
+    const originalEditBtn = button;
+
+    // Save button functionality
+    saveBtn.onclick = function () {
+        if (input.value.trim() === "") {
+            alert("Task cannot be empty!");
+            return;
+        }
+        span.innerText = input.value; // Save new task text
+        li.replaceChild(span, input); // replacement
+        saveBtn.replaceWith(originalEditBtn); // Restore Edit button
     };
 
-    // Replaces the <span> with the input field.
-    li.replaceChild(input, span);
-
-    // Replaces the Edit button with the new Save button.
-    li.querySelector(".edit-btn").replaceWith(saveBtn);
+    li.replaceChild(input, span); // Replaces the <span> with the input field.
+    button.replaceWith(saveBtn); // Replaces the Edit button with the new Save button.
 }
