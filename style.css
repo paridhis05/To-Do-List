@@ -178,3 +178,28 @@ body.dark-mode #dark-mode-toggle {
 .listing.removing {
     animation: fadeOut 0.3s ease-in-out;
 }
+
+.clear-btn {
+    /* padding: 12px; */
+    font-size: 18px;
+    color: rgb(232, 39, 39);
+    background-color: transparent;
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+    /* width: 60%; */
+    cursor: pointer;
+}
+
+.clear-btn i:hover {
+    color: rgb(200, 20, 20);
+}
+
+/* Dark mode for clear button */
+body.dark-mode .clear-btn {
+    color: #ff3333;
+}
+
+body.dark-mode .clear-btn:hover {
+    color: #cc0000;
+}

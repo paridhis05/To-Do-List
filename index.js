@@ -24,6 +24,18 @@ window.onload = function() {
     }
 };
 
+function updateClearButtonVisibility() {
+    const ul = document.getElementById('List-id');
+    const clearBtnContainer = document.getElementById("clear-btn-container");
+
+    // Show button if tasks exist, otherwise hide it
+    if (ul.children.length > 0) {
+        clearBtnContainer.style.display = "block";
+    } else {
+        clearBtnContainer.style.display = "none";
+    }
+}
+
 function addTask() {
     const input = document.getElementById('input-id');
     const task = input.value.trim();
@@ -51,6 +63,9 @@ function addTask() {
 
     // Clears the input field.
     input.value = '';
+
+    // Update Clear All button visibility
+    updateClearButtonVisibility();
 }
 
 // Deletes the task from the task.
@@ -63,7 +78,25 @@ function deleteTask(button) {
     // Remove task after animation completes
     setTimeout(() => {
         li.remove();
+        updateClearButtonVisibility(); // Check if "Clear All" button should be hidden
     }, 300);
+}
+
+function clearAllTasks() {
+    const ul = document.getElementById('List-id');
+    const tasks = ul.querySelectorAll(".listing");
+
+    if (tasks.length === 0) {
+        return;
+    }
+
+    tasks.forEach((task, index) => {
+        task.classList.add("removing");
+        setTimeout(() => {
+            task.remove();
+            updateClearButtonVisibility(); // Hide button when tasks are removed
+        }, 300);
+    });
 }
 
 // Add/removes the '.completed' class.
