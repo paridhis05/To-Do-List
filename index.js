@@ -38,6 +38,7 @@ function updateClearButtonVisibility() {
 
 function addTask() {
     const input = document.getElementById('input-id');
+    const priority = document.getElementById('priority-id').value;
     const task = input.value.trim();
 
     // if the input is empty, shows an alert and stops execution.
@@ -50,6 +51,11 @@ function addTask() {
     const ul = document.getElementById('List-id');
     const li = document.createElement('li');
     li.className = 'listing';
+
+    // Set priority label
+    const priorityLabel = document.createElement('span');
+    priorityLabel.className = `priority-circle ${priority}`;
+
     li.innerHTML = `
         <span onclick="toggleComplete(this)">${task}</span>
         <div>
@@ -57,6 +63,8 @@ function addTask() {
             <button class="delete-btn" onclick="deleteTask(this)"><i class="fa-solid fa-trash"></i></button>
         </div>
     `;
+
+    li.prepend(priorityLabel); // Add priority label before task text
 
     // Add the new task to the task list.
     ul.appendChild(li);
@@ -107,8 +115,8 @@ function toggleComplete(taskElement) {
 // 
 function editTask(button) {
     const li = button.parentElement.parentElement; // Finds the <li> that contains the task.
-    const span = li.querySelector("span"); // Selects the <span> inside it (task text).
-    const oldTask = span.innerText; // Stores the current task text
+    const taskContainer = li.querySelector("span:not(.priority-circle)"); // Selects the <span> inside it (task text) without priority.
+    const oldTask = taskContainer.innerText.trim(); // Stores the current task text
 
     // Creates an <input> field.
     const input = document.createElement("input");
@@ -122,20 +130,18 @@ function editTask(button) {
     saveBtn.innerHTML = `<i class="fa-solid fa-check"></i>`;
     saveBtn.className = "edit-btn";
 
-    // Restores edit button
-    const originalEditBtn = button;
-
     // Save button functionality
     saveBtn.onclick = function () {
         if (input.value.trim() === "") {
             alert("Task cannot be empty!");
             return;
         }
-        span.innerText = input.value; // Save new task text
-        li.replaceChild(span, input); // replacement
-        saveBtn.replaceWith(originalEditBtn); // Restore Edit button
+        taskContainer.innerText = input.value; // Save new task text
+        li.replaceChild(taskContainer, input); // replacement
+        saveBtn.replaceWith(button); // Restore Edit button
     };
 
-    li.replaceChild(input, span); // Replaces the <span> with the input field.
+    li.replaceChild(input, taskContainer); // Replaces the <span> with the input field.
     button.replaceWith(saveBtn); // Replaces the Edit button with the new Save button.
+    input.focus(); // Focus on the input field for quick editing
 }
