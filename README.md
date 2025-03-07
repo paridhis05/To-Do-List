@@ -6,27 +6,27 @@ A simple and stylish **To-Do List** web application built using **HTML, CSS, and
 
 ## Features
 
--Add new tasks with different priority levels (Low, Medium, High)
+*Add new tasks with different priority levels (Low, Medium, High)
 
--Mark tasks as completed
+*Mark tasks as completed
 
--Edit existing tasks
+*Edit existing tasks
 
--Delete individual tasks
+*Delete individual tasks
 
--Clear all tasks at once
+*Clear all tasks at once
 
--Smooth animations for adding and removing tasks
+*Smooth animations for adding and removing tasks
 
--**Dark mode** support with local storage preference
+*__Dark mode__ support with local storage preference
 
 ## Technologies Used
 
--**HTML**: Structure of the web page
+*__HTML__: Structure of the web page
 
--**CSS**: Styling and animations
+*__CSS__: Styling and animations
 
--**JavaScript**: Functionality and interactivity
+*__JavaScript__: Functionality and interactivity
 
 ## Installation
 
@@ -42,32 +42,32 @@ To run this project locally:
 
 ## Usage
 
--Enter a task in the input field and select a priority level.
+*Enter a task in the input field and select a priority level.
 
--Click the **Add** button to add the task.
+*Click the **Add** button to add the task.
 
--Click on a task to mark it as **completed** (strikethrough effect).
+*Click on a task to mark it as **completed** (strikethrough effect).
 
--Use the **edit** button to modify a task.
+*Use the **edit** button to modify a task.
 
--Click the **trash** icon to delete a task.
+*Click the **trash** icon to delete a task.
 
--Click **Clear All** to remove all tasks.
+*Click **Clear All** to remove all tasks.
 
--Toggle between **light mode** and **dark mode** using the moon/sun icon.
+*Toggle between **light mode** and **dark mode** using the moon/sun icon.
 
 ## Screenshots
 
 ## Contributing
 
--If you’d like to contribute:
+*If you’d like to contribute:
 
--Fork the repository.
+*Fork the repository.
 
--Create a new branch (feature-branch)
+*Create a new branch (feature-branch)
 
--Commit your changes (git commit -m 'Added new feature')
+*Commit your changes (git commit -m 'Added new feature')
 
--Push to the branch (git push origin feature-branch)
+*Push to the branch (git push origin feature-branch)
 
--Open a Pull Request
+*Open a Pull Request
