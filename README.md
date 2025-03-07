@@ -58,7 +58,15 @@ To run this project locally:
 
 ## Screenshots
 
-![Light mode To Do List!](./assets/images/image1.png "To Do List")
+![Light Mode To Do List!](./assets/images/image1.png "To Do List")
+
+![Dark Mode To Do List!](./assets/images/image5.png "To Do List (Dark Mode)")
+
+![Light mode To Do List!](./assets/images/image2.png "Add Task")
+
+![Light mode To Do List!](./assets/images/image3.png "Add Task (Dark Mode)")
+
+![Light mode To Do List!](./assets/images/image4.png "Edit Task")
 
 ## Contributing
 
