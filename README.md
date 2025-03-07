@@ -58,7 +58,7 @@ To run this project locally:
 
 ## Screenshots
 
-![Light mode To Do List!](/assets/images/image1.png "To Do List")
+![Light mode To Do List!](./assets/images/image1.png "To Do List")
 
 ## Contributing
 
